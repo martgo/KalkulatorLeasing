@@ -61,6 +61,14 @@ public class MyJPanel extends JPanel implements ActionListener {
             JComboBox dateSelect =new JComboBox(selectDate);
             dateSelect.setBounds(150, 350,120,30);
             add(dateSelect);
+
+
+            JRadioButton jasna = new JRadioButton("Samochód osobowy o wartości powyżej 150.000 zł");
+            jasna.setBounds(10, 500, 500, 30);
+            add(jasna);
+            JRadioButton ciemna = new JRadioButton("Pojazd elektryczny o wartości powyżej 225.000 zł");
+            ciemna.setBounds(10, 525, 500, 30);
+            add(ciemna);
         }
 
         @Override
