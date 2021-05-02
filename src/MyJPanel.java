@@ -88,6 +88,26 @@ public class MyJPanel extends JPanel implements ActionListener {
             group.add(choice1);
             group.add(choice2);
 
+            //druga strona
+
+            JLabel calculatorText = new JLabel("Kalkulator");
+            calculatorText.setBounds(500, 50, 200, 30);
+            add(calculatorText);
+            JLabel calculatorLabel = new JLabel("Opis:");
+            calculatorLabel.setBounds(450, 75, 60, 30);
+            add(calculatorLabel);
+            String calculatorName = textFirm.getText();
+            JTextArea calculatorCar = new JTextArea();
+            calculatorCar.setBounds(500, 75, 200, 100);
+            add(calculatorCar);
+
+            JLabel deduction = new JLabel("Prawo do odliczenia VAT");
+            deduction.setBounds(450, 200, 200, 30);
+            add(deduction);
+            String[] deductionSelect ={"100%","50%","Brak"};
+            JComboBox deductionBox =new JComboBox(deductionSelect);
+            deductionBox.setBounds(620, 200,100,30);
+            add(deductionBox);
         }
 
         @Override
