@@ -15,7 +15,7 @@ public class MyJPanel extends JPanel implements ActionListener {
             Font font = new Font("Lucida Grande", Font.BOLD,12);
             carBrand.setFont(font);
             add(carBrand);
-            String calculatorPosition []={"X","X", "X","Inne"};
+            String calculatorPosition []={"Mazda CX5","Mazda CX3", "Alfa Romeo","Dodaj"};
             JList opis = new JList(calculatorPosition);
             opis.setBounds(50, 75, 250, 100);
             add(opis);
@@ -26,6 +26,7 @@ public class MyJPanel extends JPanel implements ActionListener {
             //data
             JLabel textData = new JLabel("Dane");
             textData.setBounds(50, 200, 200, 30);
+            textData.setFont(font);
             add(textData);
             JLabel textFirm = new JLabel("Marka:");
             textFirm.setBounds(50, 225, 60, 30);
@@ -47,7 +48,7 @@ public class MyJPanel extends JPanel implements ActionListener {
             JLabel carType = new JLabel("Rok produkcji");
             carType.setBounds(50, 300, 100, 30);
             add(carType);
-            String[] selectType ={"1990-1995","1995-2000","2001-2005"};
+            String[] selectType ={"2015","2016","2017","2018","2019","2020","2021"};
             JComboBox years =new JComboBox(selectType);
             years.setBounds(150, 300,120,30);
             add(years);
@@ -56,7 +57,7 @@ public class MyJPanel extends JPanel implements ActionListener {
             JLabel dateOfPurchase = new JLabel("Data zakupu");
             dateOfPurchase.setBounds(50, 350, 100, 30);
             add(dateOfPurchase);
-            String[] selectDate ={"X", "Inne"};
+            String[] selectDate ={"2015","2016","2017","2018","2019","2020","2021"};
             JComboBox dateSelect =new JComboBox(selectDate);
             dateSelect.setBounds(150, 350,120,30);
             add(dateSelect);
