@@ -2,10 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
 
 public class MyJPanel extends JPanel implements ActionListener {
         public MyJPanel(){
@@ -15,11 +11,13 @@ public class MyJPanel extends JPanel implements ActionListener {
             calculator.setBounds(150, 20, 500, 30);
             add(calculator);
             JLabel carBrand = new JLabel("Samochód");
-            carBrand.setBounds(50, 50, 100, 30);
+            carBrand.setBounds(130, 50, 100, 30);
+            Font font = new Font("Lucida Grande", Font.BOLD,12);
+            carBrand.setFont(font);
             add(carBrand);
             String calculatorPosition []={"X","X", "X","Inne"};
             JList opis = new JList(calculatorPosition);
-            opis.setBounds(80, 75, 250, 100);
+            opis.setBounds(50, 75, 250, 100);
             add(opis);
             JButton wybierz = new JButton("Wybierz");
             wybierz.setBounds(200, 175, 90, 30);
@@ -78,10 +76,10 @@ public class MyJPanel extends JPanel implements ActionListener {
             add(carValueText);
 
             JRadioButton choice1 = new JRadioButton("Samochód osobowy o wartości powyżej 150.000 zł");
-            choice1.setBounds(10, 500, 500, 30);
+            choice1.setBounds(10, 500, 375, 30);
             add(choice1);
             JRadioButton choice2 = new JRadioButton("Pojazd elektryczny o wartości powyżej 225.000 zł");
-            choice2.setBounds(10, 525, 500, 30);
+            choice2.setBounds(10, 525, 375, 30);
             add(choice2);
 
             ButtonGroup group = new ButtonGroup();
@@ -91,23 +89,75 @@ public class MyJPanel extends JPanel implements ActionListener {
             //druga strona
 
             JLabel calculatorText = new JLabel("Kalkulator");
-            calculatorText.setBounds(500, 50, 200, 30);
+            calculatorText.setBounds(575, 50, 200, 30);
+            Font fontCalculator = new Font("Lucida Grande", Font.BOLD,20);
+            calculatorText.setFont(font);
             add(calculatorText);
             JLabel calculatorLabel = new JLabel("Opis:");
             calculatorLabel.setBounds(450, 75, 60, 30);
             add(calculatorLabel);
             String calculatorName = textFirm.getText();
             JTextArea calculatorCar = new JTextArea();
-            calculatorCar.setBounds(500, 75, 200, 100);
+            calculatorCar.setBounds(500, 75, 225, 100);
             add(calculatorCar);
 
             JLabel deduction = new JLabel("Prawo do odliczenia VAT");
-            deduction.setBounds(450, 200, 200, 30);
+            deduction.setBounds(450, 180, 200, 30);
             add(deduction);
             String[] deductionSelect ={"100%","50%","Brak"};
             JComboBox deductionBox =new JComboBox(deductionSelect);
-            deductionBox.setBounds(620, 200,100,30);
+            deductionBox.setBounds(620, 180,100,30);
             add(deductionBox);
+
+            JLabel capex = new JLabel("Opłaty leasingowe w części kapitałowej:");
+            capex.setBounds(450, 215, 300, 30);
+            add(capex);
+
+            JLabel capexNet = new JLabel("Kwota Netto");
+            capexNet.setBounds(450, 250, 150, 30);
+            add(capexNet);
+            JTextField capexNetField = new JTextField();
+            capexNetField.setBounds(550, 250, 125, 30);
+            add(capexNetField);
+
+            JLabel capexVat = new JLabel("Kwota Vat");
+            capexVat.setBounds(450, 285, 150, 30);
+            add(capexVat);
+            JTextField capexVatField = new JTextField();
+            capexVatField.setBounds(550, 285, 125, 30);
+            add(capexVatField);
+
+            JLabel interest = new JLabel("Opłaty leasingowe w części odsetkowej:");
+            interest.setBounds(450, 325, 350, 30);
+            add(interest);
+
+            JLabel interestNet = new JLabel("Kwota Netto");
+            interestNet.setBounds(450, 360, 150, 30);
+            add(interestNet);
+            JTextField interestNetField = new JTextField();
+            interestNetField.setBounds(550, 360, 125, 30);
+            add(interestNetField);
+
+            JLabel interestVat = new JLabel("Kwota Vat");
+            interestVat.setBounds(450, 395, 150, 30);
+            add(interestVat);
+            JTextField interestVatField = new JTextField();
+            interestVatField.setBounds(550, 395, 125, 30);
+            add(interestVatField);
+
+            JButton count = new JButton("Oblicz");
+            count.setBounds(500, 440, 90, 30);
+            count.setForeground(Color.GREEN);
+            add(count);
+
+            JTextArea countField = new JTextArea();
+            countField.setBounds(450, 475, 200, 50);
+            add(countField);
+
+            JButton save = new JButton("Zapisz");
+            save.setBounds(500, 525, 90, 30);
+            save.setForeground(Color.red);
+            add(save);
         }
 
         @Override

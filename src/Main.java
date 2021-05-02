@@ -8,7 +8,7 @@ public class Main {
 
         MyJPanel panel = new MyJPanel();
         window.add(panel);
-
+        window.setBackground(Color.GRAY);
         window.setLocation(200,  100);
 		window.setSize(500,500);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
