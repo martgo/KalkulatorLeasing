@@ -54,6 +54,7 @@ public class MyJPanel extends JPanel implements ActionListener {
             years.setBounds(150, 300,120,30);
             add(years);
 
+
             JLabel dateOfPurchase = new JLabel("Data zakupu");
             dateOfPurchase.setBounds(50, 350, 100, 30);
             add(dateOfPurchase);
@@ -62,13 +63,31 @@ public class MyJPanel extends JPanel implements ActionListener {
             dateSelect.setBounds(150, 350,120,30);
             add(dateSelect);
 
+            JLabel engine = new JLabel("Silnik");
+            engine.setBounds(50, 400, 100, 30);
+            add(engine);
+            JTextField textEngine = new JTextField();
+            textEngine.setBounds(100, 400, 200, 30);
+            add(textEngine);
 
-            JRadioButton jasna = new JRadioButton("Samochód osobowy o wartości powyżej 150.000 zł");
-            jasna.setBounds(10, 500, 500, 30);
-            add(jasna);
-            JRadioButton ciemna = new JRadioButton("Pojazd elektryczny o wartości powyżej 225.000 zł");
-            ciemna.setBounds(10, 525, 500, 30);
-            add(ciemna);
+            JLabel carValue = new JLabel("Wartość pojazdu");
+            carValue.setBounds(50, 450, 150, 30);
+            add(carValue);
+            JTextField carValueText = new JTextField();
+            carValueText.setBounds(175, 450, 125, 30);
+            add(carValueText);
+
+            JRadioButton choice1 = new JRadioButton("Samochód osobowy o wartości powyżej 150.000 zł");
+            choice1.setBounds(10, 500, 500, 30);
+            add(choice1);
+            JRadioButton choice2 = new JRadioButton("Pojazd elektryczny o wartości powyżej 225.000 zł");
+            choice2.setBounds(10, 525, 500, 30);
+            add(choice2);
+
+            ButtonGroup group = new ButtonGroup();
+            group.add(choice1);
+            group.add(choice2);
+
         }
 
         @Override
