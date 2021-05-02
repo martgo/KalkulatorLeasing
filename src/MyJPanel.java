@@ -37,14 +37,30 @@ public class MyJPanel extends JPanel implements ActionListener {
             textCarFirm.setBounds(100, 225, 200, 30);
             add(textCarFirm);
 
-            JLabel carType = new JLabel("Typ pojazdu");
-            carType.setBounds(50, 270, 100, 30);
-            add(carType);
 
-            String[] selectType ={"Osobowy","Inny"};
-            JComboBox miecze =new JComboBox(selectType);
-            miecze.setBounds(130, 270,120,30);
-            add(miecze);
+
+            JLabel carModel = new JLabel("Model");
+            carModel.setBounds(50, 270, 100, 30);
+            add(carModel);
+            JTextField textcarModel = new JTextField();
+            textcarModel.setBounds(100, 270, 200, 30);
+            add(textcarModel);
+
+            JLabel carType = new JLabel("Rok produkcji");
+            carType.setBounds(50, 300, 100, 30);
+            add(carType);
+            String[] selectType ={"1990-1995","1995-2000","2001-2005"};
+            JComboBox years =new JComboBox(selectType);
+            years.setBounds(150, 300,120,30);
+            add(years);
+
+            JLabel dateOfPurchase = new JLabel("Data zakupu");
+            dateOfPurchase.setBounds(50, 350, 100, 30);
+            add(dateOfPurchase);
+            String[] selectDate ={"X", "Inne"};
+            JComboBox dateSelect =new JComboBox(selectDate);
+            dateSelect.setBounds(150, 350,120,30);
+            add(dateSelect);
         }
 
         @Override
