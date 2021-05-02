@@ -8,13 +8,13 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 
 public class MyJPanel extends JPanel implements ActionListener {
-        public MyJPanel() throws SQLException {
+        public MyJPanel(){
             setLayout(null);
 
             JLabel kalkulator = new JLabel("Kalkulator opłat leasingowych dotyczących samochodu osobowego");
             kalkulator.setBounds(150, 20, 500, 30);
             add(kalkulator);
-            String kalkulatorPozycje []={"X","X", "X", "X"};
+            String kalkulatorPozycje []={"X","X", "X","X"};
             JList opis = new JList(kalkulatorPozycje);
             opis.setBounds(100, 75, 250, 100);
             add(opis);
