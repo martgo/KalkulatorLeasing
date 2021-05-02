@@ -31,26 +31,6 @@ public class MyJPanel extends JPanel implements ActionListener {
             JList wybieranie = new JList();
             wybieranie.setBounds(100, 275, 250, 100);
             add(wybieranie);
-
-            JButton zarejestruj = new JButton("Zarejestruj");
-            zarejestruj.setBounds(100, 500, 95, 30);
-            add(zarejestruj);
-
-            JButton wyczysc = new JButton("Wyczyść");
-            wyczysc.setBounds(200, 500, 95, 30);
-            add(wyczysc);
-
-            JButton i = new JButton("Import");
-            i.setBounds(2, 400, 95, 30);
-            add(i);
-
-            JTextField sciezka = new JTextField();
-            sciezka.setBounds(100, 415, 200, 30);
-            add(sciezka);
-
-            JSeparator separator = new JSeparator();
-            separator.setOrientation(SwingConstants.VERTICAL);
-            separator.setBounds(250,250,2,500);
         }
 
         @Override
