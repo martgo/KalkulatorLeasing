@@ -156,30 +156,50 @@ public class MyJPanel extends JPanel implements ActionListener {
             count.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
-                    //% od wartości
                     int contents = Integer.parseInt(carValueText.getText());
                     int minCarValue = 150000;
-                    int result = (minCarValue * 100)/contents;
-                    if(contents<150000){
+                    int result = (minCarValue * 100) / contents;
+                    if (contents < 150000) {
                         JLabel error = new JLabel("Błąd!");
                         error.setBounds(400, 470, 30, 10);
                         error.setVisible(true);
                         add(error);
                         System.out.println("błąd!");
-                    }else {
-                    System.out.println("Proporcja w jakiej kwota 150.000,00 zł pozostaje do wartości samochodu osobowego:" + result + "%");
+                    } else {
+                        System.out.println("Proporcja w jakiej kwota 150.000,00 zł pozostaje do wartości samochodu osobowego: " + result + "%");
                     }
-                    //netto
                     int contents1 = Integer.parseInt(capexNetField.getText());
-                    var netSum = (result * contents1)/100;
-                    System.out.println(netSum + "złotych");
+                    var netSum = (result * contents1) / 100;
+                    if (contents < 150000) {
+                        JLabel error = new JLabel("Błąd!");
+                        error.setBounds(400, 470, 30, 10);
+                        error.setVisible(true);
+                        add(error);
+                        System.out.println("błąd!");
+                    } else {
+                        System.out.println("Opłata leasingowa w części kapitałowej, stanowiąca koszt uzyskania przychodu: " + netSum + " złotych");
+                    }
                     int contents2 = Integer.parseInt(capexVatField.getText());
                     int contents3 = Integer.parseInt(interestNetField.getText());
                     int contents4 = Integer.parseInt(interestVatField.getText());
-                    System.out.println("Opłata leasingowa w części kapitałowej, stanowiąca koszt uzyskania przychodu:"+contents1);
-                    System.out.println(netSum);
-                    System.out.println("Opłata leasingowa w części odsetkowej, stanowiąca koszt uzyskania przychodu:"+contents3);
-                    System.out.println(contents4);
+                    if (contents < 150000) {
+                        JLabel error = new JLabel("Błąd!");
+                        error.setBounds(400, 470, 30, 10);
+                        error.setVisible(true);
+                        add(error);
+                        System.out.println("błąd!");
+                    } else {
+                        System.out.println("Opłata leasingowa w części odsetkowej, stanowiąca koszt uzyskania przychodu: " + contents3 + " złotych");
+                    }
+                    if (contents < 150000) {
+                        JLabel error = new JLabel("Błąd!");
+                        error.setBounds(400, 470, 30, 10);
+                        error.setVisible(true);
+                        add(error);
+                        System.out.println("błąd!");
+                    } else {
+                        System.out.println("Suma opłat leasingowych stanowiących koszt uzyskania przychodu: " + (contents3 + netSum) + " złotych");
+                    }
                 }
             });
             add(count);
