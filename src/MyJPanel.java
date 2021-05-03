@@ -1,7 +1,11 @@
+import jdk.jfr.Percentage;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import static java.lang.Integer.parseInt;
 
 public class MyJPanel extends JPanel implements ActionListener {
         public MyJPanel(){
@@ -149,6 +153,27 @@ public class MyJPanel extends JPanel implements ActionListener {
             JButton count = new JButton("Oblicz");
             count.setBounds(500, 440, 90, 30);
             count.setForeground(Color.GREEN);
+            count.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent) {
+                    int contents = Integer.parseInt(carValueText.getText());
+                    int minCarValue = 150000;
+                    int result = (minCarValue * 100)/contents;
+                    System.out.println(result + "%");
+
+
+                    int contents1 = Integer.parseInt(capexNetField.getText());
+                    int contents2 = Integer.parseInt(capexVatField.getText());
+                    int contents3 = Integer.parseInt(interestNetField.getText());
+                    int contents4 = Integer.parseInt(interestVatField.getText());
+//                    System.out.println(k);
+                    System.out.println(contents1);
+                    System.out.println(contents2);
+                    System.out.println(contents3);
+                    System.out.println(contents4);
+
+                }
+            });
             add(count);
 
             JTextArea countField = new JTextArea();
