@@ -81,7 +81,7 @@ public class MyJPanel extends JPanel implements ActionListener {
             add(carValueText);
 
             JRadioButton choice1 = new JRadioButton("Samochód osobowy o wartości powyżej 150.000 zł");
-            choice1.setBounds(10, 500, 375, 30);
+            choice1.setBounds(10, 500, 375, 20);
             add(choice1);
             JRadioButton choice2 = new JRadioButton("Pojazd elektryczny o wartości powyżej 225.000 zł");
             choice2.setBounds(10, 525, 375, 30);
@@ -109,7 +109,7 @@ public class MyJPanel extends JPanel implements ActionListener {
             JLabel deduction = new JLabel("Prawo do odliczenia VAT");
             deduction.setBounds(450, 180, 200, 30);
             add(deduction);
-            String[] deductionSelect ={"100%","50%","Brak"};
+            String[] deductionSelect ={String.valueOf(100.0) + "%",String.valueOf(50.0)+ "%","Brak"};
             JComboBox deductionBox =new JComboBox(deductionSelect);
             deductionBox.setBounds(620, 180,100,30);
             add(deductionBox);
@@ -159,19 +159,23 @@ public class MyJPanel extends JPanel implements ActionListener {
                     int contents = Integer.parseInt(carValueText.getText());
                     int minCarValue = 150000;
                     int result = (minCarValue * 100)/contents;
-                    System.out.println(result + "%");
-
-
+                    if(contents<150000){
+                        JLabel error = new JLabel("Błąd!");
+                        error.setBounds(400, 470, 30, 10);
+                        error.setVisible(true);
+                        add(error);
+                        System.out.println("błąd!");
+                    }else {
+                    System.out.println("Proporcja w jakiej kwota 150.000,00 zł pozostaje do wartości samochodu osobowego:" + result + "%");
+                    }
                     int contents1 = Integer.parseInt(capexNetField.getText());
                     int contents2 = Integer.parseInt(capexVatField.getText());
                     int contents3 = Integer.parseInt(interestNetField.getText());
                     int contents4 = Integer.parseInt(interestVatField.getText());
-//                    System.out.println(k);
-                    System.out.println(contents1);
+                    System.out.println("Opłata leasingowa w części kapitałowej, stanowiąca koszt uzyskania przychodu:"+contents1);
                     System.out.println(contents2);
-                    System.out.println(contents3);
+                    System.out.println("Opłata leasingowa w części odsetkowej, stanowiąca koszt uzyskania przychodu:"+contents3);
                     System.out.println(contents4);
-
                 }
             });
             add(count);
