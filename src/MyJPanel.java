@@ -110,6 +110,7 @@ public class MyJPanel extends JPanel implements ActionListener {
             deduction.setBounds(450, 180, 200, 30);
             add(deduction);
             String[] deductionSelect ={String.valueOf(100.0) + "%",String.valueOf(50.0)+ "%","Brak"};
+            String[] deductionSelect1 ={String.valueOf(100.0) + "%",String.valueOf(50.0)+ "%","Brak"};
             JComboBox deductionBox =new JComboBox(deductionSelect);
             deductionBox.setBounds(620, 180,100,30);
             add(deductionBox);
