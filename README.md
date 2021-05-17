@@ -12,7 +12,7 @@ A commercial project created for business purposes to calculate lease payments f
 Java 11
 
 ##Illustrations
-![Kalkulator](/Users/martag/Desktop/JAVA/kalkulatorLeasing)
+![Kalkulator]()
 
 ##Author
 Marta Gos
